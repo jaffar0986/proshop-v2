@@ -1,0 +1,11 @@
+{
+  "name": "proshop-v2",
+  "version": "2.0.0",
+  "description": "eCommerce application bulid with the MERN stack",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shah Jaffa",
+  "license": "MIT"
+}
