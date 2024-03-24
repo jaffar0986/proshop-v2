@@ -12,7 +12,7 @@
     "data:import": "node backend/seeder.js",
     "data:destroy": "node backend/seeder.js -d"
   },
-  "author": "Shah Jaffa",
+  "author": "Shah Jaffar",
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
