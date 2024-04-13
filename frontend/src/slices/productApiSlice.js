@@ -1,4 +1,4 @@
-import { PRODUCTS_URL } from "../constants";
+import { PRODUCTS_URL, UPLOAD_URL} from "../constants";
 import { apiSlice } from "./apiSlice";
 
 // So instead of fetch or axios we are using this
@@ -8,7 +8,7 @@ export const productApiSlice = apiSlice.injectEndpoints({
             query: () => ({
                 url: PRODUCTS_URL,
             }),
-            providesTags: ['Product'],
+            providesTags: ['Products'],
             keyUnusedDataFor: 5
         }),
         getProductById: (builder).query({
@@ -31,7 +31,14 @@ export const productApiSlice = apiSlice.injectEndpoints({
                body: data,
             
             }),
-            invalidatesTags: ['Product']
+            invalidatesTags: ['Products']
+        }),
+        uploadProductImage: builder.mutation({
+            query: (data) => ({
+                url: `${UPLOAD_URL}`,
+                method: 'POST',
+                body: data,
+            }),
         })
     }),
 });
@@ -40,5 +47,7 @@ export const {
     useGetProductsQuery,
     useGetProductByIdQuery,
     useCreateProductMutation,
-    useUpdateProductMutation
+    useUpdateProductMutation,
+    useUploadProductImageMutation
+    
      } = productApiSlice;
